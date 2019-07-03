@@ -2,7 +2,10 @@ package com.example.swusemiproject2019;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -11,10 +14,24 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        // 테스트 코드1
+        // 로그인 버튼
+        Button btnLogin = findViewById(R.id.btnLogin);
+        btnLogin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                // TODO
+            }
+        });
 
-        // 오늘 컨디션 중간
+        // 회원가입 버튼
+        Button btnReg = findViewById(R.id.btnReg);
+        btnReg.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), RegActivity.class);
+                startActivity(intent);
+            }
+        });
 
-        // 커밋 및 push 테스트
     }
 }
