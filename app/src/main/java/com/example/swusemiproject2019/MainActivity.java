@@ -33,7 +33,16 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        // 추가 코드
+        // 탭 테스트
+        // 회원가입 버튼
+        Button btnTabTest = findViewById(R.id.btnTabTest);
+        btnTabTest.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), TabActivity.class);
+                startActivity(intent);
+            }
+        });
 
     }
 }
