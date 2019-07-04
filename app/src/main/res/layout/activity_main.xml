@@ -113,4 +113,10 @@
         android:layout_height="wrap_content"
         android:text="Button2" />
 
+    <Button
+        android:id="@+id/btnTab3Test"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Button3" />
+
 </LinearLayout>

@@ -9,7 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".TabMemoActivity"></activity>
+        <activity android:name=".TabMemoActivity" />
         <activity android:name=".CreateMemoActivity" />
         <activity android:name=".TabActivity" />
         <activity android:name=".RegActivity" />

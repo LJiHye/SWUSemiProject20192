@@ -53,5 +53,14 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        // 탭3 테스트
+        Button btnTab3Test = findViewById(R.id.btnTab3Test);
+        btnTab3Test.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), CreateMemoActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 }
