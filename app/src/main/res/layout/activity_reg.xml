@@ -16,49 +16,57 @@
         android:textStyle="bold" />
 
     <ImageView
-        android:id="@+id/imgView"
+        android:id="@+id/imgReg"
         android:layout_width="100dp"
-        android:layout_height="100dp"
+        android:layout_height="98dp"
         android:layout_marginTop="20dp"
         app:srcCompat="@drawable/ic_launcher_background" />
 
     <Button
-        android:id="@+id/btnPicture"
+        android:id="@+id/btnPic"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="사진찍기"
         android:textSize="20dp" />
 
     <EditText
-        android:id="@+id/txtId"
+        android:id="@+id/infoId"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
         android:hint="ID 입력"
         android:maxLength="10"
         android:layout_marginTop="20dp"
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="50dp"
         android:inputType="textPersonName"/>
 
     <EditText
-        android:id="@+id/txtName"
+        android:id="@+id/editName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
         android:hint="이름 입력"
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="50dp"
         android:inputType="textPersonName" />
 
     <EditText
-        android:id="@+id/txtPw"
+        android:id="@+id/editPwd"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="비밀번호 입력"
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="50dp"
         android:inputType="textPassword" />
 
     <EditText
-        android:id="@+id/txtCheckPw"
+        android:id="@+id/editCheckPwd"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="비밀번호 확인"
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="50dp"
         android:inputType="textPassword" />
 
     <Button

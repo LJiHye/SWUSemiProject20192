@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:gravity="center"
     tools:context=".MainActivity">
 
     <TextView
@@ -13,7 +14,6 @@
         android:text="안드로이드메모장"
         android:textSize="30dp"
         android:textStyle="bold"
-        android:layout_marginTop="20dp"
         android:layout_gravity="center" />
 
     <TextView
@@ -21,7 +21,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginTop="10dp"
-        android:background="#009688"
+        android:background="#393D3C"
         android:text="1조(이지혜)"
         android:textColor="#FFFFFF"
         android:textSize="20dp" />
@@ -43,12 +43,13 @@
             android:textSize="20dp" />
 
         <EditText
+            android:id="@+id/txtId"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginLeft="50dp"
             android:layout_marginRight="50dp"
-            android:hint="아이디를 입럭하세요."
             android:layout_weight="0.8"
+            android:hint="아이디를 입럭하세요."
             android:inputType="textPersonName" />
     </LinearLayout>
 
@@ -69,6 +70,7 @@
             android:textSize="20dp" />
 
         <EditText
+            android:id="@+id/txtPwd"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginLeft="50dp"
@@ -82,7 +84,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="20dp"
         android:gravity="center_horizontal">
         <Button
             android:id="@+id/btnLogin"
@@ -102,21 +104,15 @@
     </LinearLayout>
 
     <Button
-        android:id="@+id/btnTabTest"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Button" />
-
-    <Button
         android:id="@+id/btnTab2Test"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Button2" />
+        android:text="Detail Memo Tab Test" />
 
     <Button
         android:id="@+id/btnTab3Test"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Button3" />
+        android:text="Create Memo Tab Test" />
 
 </LinearLayout>
