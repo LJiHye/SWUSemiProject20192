@@ -34,12 +34,21 @@ public class MainActivity extends AppCompatActivity {
         });
 
         // 탭 테스트
-        // 회원가입 버튼
         Button btnTabTest = findViewById(R.id.btnTabTest);
         btnTabTest.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(getApplicationContext(), TabActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        // 탭2 테스트
+        Button btnTab2Test = findViewById(R.id.btnTab2Test);
+        btnTab2Test.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), TabMemoActivity.class);
                 startActivity(intent);
             }
         });
