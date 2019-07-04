@@ -8,7 +8,6 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.swusemiproject2019.database.Database;
@@ -16,8 +15,6 @@ import com.example.swusemiproject2019.model.MemberModel;
 
 public class MainActivity extends AppCompatActivity {
     private final String TAG = this.getClass().getSimpleName(); // 클래스명 획득
-    public static final int VIEW_DETAIL = 100;
-    public static final int VIEW_SAVE = 101;
 
     Button btnLogin, btnReg;
     EditText txtId, txtPwd;
@@ -54,7 +51,9 @@ public class MainActivity extends AppCompatActivity {
                             intent.putExtra("MEMBER", member);
                         }
                         Toast.makeText(getApplicationContext(), "로그인 성공", Toast.LENGTH_SHORT).show();
-                        startActivityForResult(intent, VIEW_DETAIL);
+                        startActivity(intent);
+                    } else {
+                        Toast.makeText(getApplicationContext(), "로그인 실패", Toast.LENGTH_SHORT).show();
                     }
                 }
                 if(txtId.getText().toString().isEmpty() || txtPwd.getText().toString().isEmpty()){
@@ -73,37 +72,5 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-
-        // 탭2 테스트
-        Button btnTab2Test = findViewById(R.id.btnTab2Test);
-        btnTab2Test.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(), TabMemoActivity.class);
-                startActivity(intent);
-            }
-        });
-
-        // 탭3 테스트
-        Button btnTab3Test = findViewById(R.id.btnTab3Test);
-        btnTab3Test.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(), CreateMemoActivity.class);
-                startActivity(intent);
-            }
-        });
-    }
-
-    @Override
-    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
-        switch(requestCode) {
-            case VIEW_DETAIL:
-                break;
-            case VIEW_SAVE:
-                // TODO
-                break;
-        }
     }
 }

@@ -5,9 +5,16 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
+    <Button
+        android:id="@+id/btnCreateMemo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="메모 저장"
+        android:textSize="20dp"
+        android:textStyle="bold" />
 
     <EditText
-        android:id="@+id/editText"
+        android:id="@+id/txtMemo"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="0.9"

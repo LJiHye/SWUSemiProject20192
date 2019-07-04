@@ -11,6 +11,7 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -23,6 +24,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Fragment_memo extends Fragment {
+    public static final int SAVE = 1001;
     public Fragment_memo() {} // Default Constructor
     ListView listView;
     List<MyMemo> memos = new ArrayList<>();
@@ -42,9 +44,10 @@ public class Fragment_memo extends Fragment {
         View view = inflater.inflate(R.layout.fragment_memo, container, false);
         listView = (ListView) view.findViewById(R.id.list_memo);
         btnCreateMemo = view.findViewById(R.id.btnCreateMemo);
-        db = Database.getInstance(getActivity());
 
-        memos.add(new MyMemo(R.drawable.ic_launcher_background, "포도", "신선한 포도"));
+        /*memos.add(new MyMemo(R.drawable.ic_launcher_background, "포도", "신선한 포도"));*/
+
+        memos = Database.getInstance(getContext()).loadMemos();
 
         adapter = new ListAdapter(memos, getActivity());
         listView.setAdapter(adapter);
@@ -53,10 +56,21 @@ public class Fragment_memo extends Fragment {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(getContext(), CreateMemoActivity.class);
-                startActivity(intent);
+                startActivityForResult(intent, SAVE);
             }
         });
         return view;
+    }
+
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+        if(requestCode == SAVE) {
+            memos = Database.getInstance(getContext()).loadMemos();
+            adapter.setItems(memos);
+            adapter.notifyDataSetChanged();
+        }
     }
 
     class ListAdapter extends BaseAdapter {
@@ -68,6 +82,10 @@ public class Fragment_memo extends Fragment {
             this.memos = memos;
             this.mContext = context;
             this.inflater = (LayoutInflater) context.getSystemService(context.LAYOUT_INFLATER_SERVICE);
+        }
+
+        public void setItems(List<MyMemo> memos) {
+            this.memos = memos;
         }
 
         @Override
@@ -92,6 +110,7 @@ public class Fragment_memo extends Fragment {
             ImageView memoImg = view.findViewById(R.id.memoImg);
             TextView txtvMemo = view.findViewById(R.id.txtvMemo);
             TextView txtvDate = view.findViewById(R.id.txtvDate);
+            db = Database.getInstance(getActivity());
 
             MyMemo memo = memos.get(i);
 
@@ -123,10 +142,10 @@ public class Fragment_memo extends Fragment {
                 public void onClick(View view) {
                     //Toast.makeText(getContext(), "삭제..", Toast.LENGTH_SHORT).show();
                     db.removeMemo(i);
+                    Toast.makeText(getContext(), "삭제", Toast.LENGTH_SHORT).show();
+                    adapter.notifyDataSetChanged();
                 }
             });
-
-
             return view;
         }
     }

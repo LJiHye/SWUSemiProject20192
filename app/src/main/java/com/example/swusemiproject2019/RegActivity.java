@@ -42,24 +42,29 @@ public class RegActivity extends AppCompatActivity {
         btnReg.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                MemberModel checkMember = db.getMember(editId.getText().toString());
-                if (checkMember != null) {
-                    Toast.makeText(getApplication(),"존재하는 아이디입니다.", Toast.LENGTH_LONG).show();
+                if (editId.getText().toString().isEmpty() || editPwd.getText().toString().isEmpty()
+                        || editName.getText().toString().isEmpty() || editCheckPwd.getText().toString().isEmpty()) {
+                    Toast.makeText(getApplication(),"데이터를 모두 입력하세요.", Toast.LENGTH_LONG).show();
                 } else {
-                    if(editPwd.getText().toString().equals(editCheckPwd.getText().toString())) {
-                        MemberModel member = new MemberModel();
-                        member.setId(editId.getText().toString());
-                        member.setPwd(editPwd.getText().toString());
-                        member.setName(editName.getText().toString());
-                        member.setProfile(imgReg.getTextDirection());
-                        Database.getInstance(getApplicationContext()).setMember(member);
-
-                        db.setMember(member);
-
-                        Toast.makeText(getApplication(), "회원 가입이 완료되었습니다.", Toast.LENGTH_SHORT).show();
-                        finish();
+                    MemberModel checkMember = db.getMember(editId.getText().toString());
+                    if (checkMember != null) {
+                        Toast.makeText(getApplication(),"존재하는 아이디입니다.", Toast.LENGTH_LONG).show();
                     } else {
-                        Toast.makeText(getApplication(), "비밀 번호가 일치하지 않습니다.", Toast.LENGTH_SHORT).show();
+                        if(editPwd.getText().toString().equals(editCheckPwd.getText().toString())) {
+                            MemberModel member = new MemberModel();
+                            member.setId(editId.getText().toString());
+                            member.setPwd(editPwd.getText().toString());
+                            member.setName(editName.getText().toString());
+                            member.setProfile(imgReg.getTextDirection());
+                            Database.getInstance(getApplicationContext()).setMember(member);
+
+                            db.setMember(member);
+
+                            Toast.makeText(getApplication(), "회원 가입이 완료되었습니다.", Toast.LENGTH_SHORT).show();
+                            finish();
+                        } else {
+                            Toast.makeText(getApplication(), "비밀 번호가 일치하지 않습니다.", Toast.LENGTH_SHORT).show();
+                        }
                     }
                 }
             }

@@ -34,7 +34,7 @@
         <TextView
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_weight="0.4"
+            android:layout_weight="0.5"
             android:text="아이디: "
             android:textAlignment="viewEnd" />
 
@@ -42,7 +42,8 @@
             android:id="@+id/infoId"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_weight="0.6"
+            android:layout_weight="0.5"
+            android:paddingLeft="20dp"
             android:textAlignment="viewStart"/>
     </LinearLayout>
 
@@ -59,13 +60,14 @@
             android:layout_height="wrap_content"
             android:text="이름: "
             android:textAlignment="viewEnd"
-            android:layout_weight="0.4"/>
+            android:layout_weight="0.5"/>
 
         <TextView
             android:id="@+id/infoName"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_weight="0.6"
+            android:layout_weight="0.5"
+            android:paddingLeft="20dp"
             android:textAlignment="viewStart"/>
     </LinearLayout>
 
@@ -82,14 +84,15 @@
             android:layout_height="wrap_content"
             android:text="패스워드: "
             android:textAlignment="viewEnd"
-            android:layout_weight="0.4"/>
+            android:layout_weight="0.5"/>
 
         <TextView
             android:id="@+id/infoPwd"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:textAlignment="viewStart"
-            android:layout_weight="0.6"/>
+            android:paddingLeft="20dp"
+            android:layout_weight="0.5"/>
     </LinearLayout>
 
 </LinearLayout>

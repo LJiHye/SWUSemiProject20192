@@ -15,6 +15,7 @@ public class CreateMemoActivity extends AppCompatActivity {
     private TabLayout tabLayout3;
     private ViewPager viewPager3;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

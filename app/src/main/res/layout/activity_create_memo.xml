@@ -22,14 +22,6 @@
         android:layout_height="wrap_content">
     </com.google.android.material.tabs.TabLayout>
 
-    <Button
-        android:id="@+id/btnSave"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="메모 저장"
-        android:textSize="20dp"
-        android:textStyle="bold" />
-
     <androidx.viewpager.widget.ViewPager
         android:id="@+id/viewPager3"
         android:layout_width="match_parent"

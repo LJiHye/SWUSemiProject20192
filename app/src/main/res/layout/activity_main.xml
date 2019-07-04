@@ -103,16 +103,4 @@
             android:text="회원가입" />
     </LinearLayout>
 
-    <Button
-        android:id="@+id/btnTab2Test"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Detail Memo Tab Test" />
-
-    <Button
-        android:id="@+id/btnTab3Test"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Create Memo Tab Test" />
-
 </LinearLayout>
